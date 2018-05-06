@@ -1,0 +1,19 @@
+Setting up the envirotnment.
+
+To install angular CLI in a project that you already have, you`ll use the following :
+npm i @angular/cli
+
+when you install it in a folder, it will install all the node_modules creating a folder and the package-lock.json file.
+
+to start server, you will use
+ng serve
+
+to create a project
+ng new project_name
+
+to create a component, you will use 
+ng g c component_name
+
+to install bootstrap in your project, you will use the following :
+npm install bootstrap --save
+

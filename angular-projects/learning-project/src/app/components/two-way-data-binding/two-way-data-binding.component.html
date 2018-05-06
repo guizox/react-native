@@ -1,0 +1,21 @@
+<article>
+    <h3>Event binding</h3>
+    <div>
+      <input type="text"
+        [value]="nome"
+        (input)="nome = inputTarget.value"
+        #inputTarget
+      />
+      <input type="text" [(ngModel)]="nome">
+      
+      <br>
+      <p> Voce Digitou o nome : {{ nome }}</p>
+      <br>
+
+      <input type="text" 
+        [(ngModel)]="pessoa.nome"/>
+      <input type="text" 
+        [(ngModel)]="pessoa.idade"/>
+      <p> Meu Nome é : {{ pessoa.nome }} e eu tenho {{ pessoa.idade }} anos</p>
+    </div>
+</article>

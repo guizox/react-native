@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  contador = 10;
+
+  onMudouValor(evento) {
+    console.log(evento);
+  }
 }

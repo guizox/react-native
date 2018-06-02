@@ -1,0 +1,19 @@
+<section class='wrapper'>
+  <app-login
+    (emitter)="setState($event)"
+    *ngIf="loginComponentRender">
+  </app-login>
+  <register
+    (emitter)="onDestroyRegisterComponent($event)"
+    *ngIf="registerComponentRender">
+  </register>
+  <forget-password
+    (emitter)="onDestroyForgetPasswordComponent($event)"
+    *ngIf="forgotPasswordComponentRender">
+  </forget-password>
+  <app-home
+    (emitter)="onDestroyLoginComponent($event)"
+    *ngIf="homeComponentRender"  
+  >
+  </app-home>
+</section>

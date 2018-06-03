@@ -14,6 +14,10 @@
             <a (click)="onClickClassificacao()">Classificação
             </a>
         </li>
+        <li [ngClass]="{'active' : profile}">
+            <a (click)="onClickProfile()">Profile
+            </a>
+        </li>
         </ul>
     </div>
     <button 
@@ -29,6 +33,12 @@
     *ngIf="equipes">
 </app-equipes>
 
+<app-change-password
+    *ngIf="profile">
+</app-change-password>
+
 <app-classificacao
     *ngIf="classificacao">
 </app-classificacao>
+
+<simple-notifications></simple-notifications>

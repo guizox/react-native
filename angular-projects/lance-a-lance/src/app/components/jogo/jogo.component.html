@@ -8,6 +8,7 @@
       class="children"></app-time>
   </div>
   <h4>Local : {{ jogo.local }}</h4>
-  <h5>Horario : {{jogo.horario  || 'Ainda não definido'}}</h5>
+  <h5>Data/Horario : {{jogo.data | date: 'dd/MM/yyyy'}} - {{jogo.horario  || 'Ainda não definido'}}</h5>
+
   <h6>Estadio : {{ jogo.estadio }}</h6>
 </div>

@@ -8,14 +8,17 @@ import { GamesServiceService } from '../../services/games-service.service';
 })
 export class JogosDataComponent implements OnInit {
   jogos: any;
-  roundNumber: number = 0;
+  roundNumber: number = 9;
+  loading: boolean = false;
 
   constructor(private gameService: GamesServiceService) { }
 
   ngOnInit() {
+    this.searchRound();
   }
 
   searchRound(){
+    this.loading = true;
     this.gameService.getAllGames().then((resp) => {
       this.jogos = new Array();
       for (let i = 0; i < resp.fases['2700'].jogos.rodada[this.roundNumber].length; i++){
@@ -23,13 +26,13 @@ export class JogosDataComponent implements OnInit {
           time1 = parseInt(resp.fases['2700'].jogos.id[id]['time1']),
           time2 = parseInt(resp.fases['2700'].jogos.id[id]['time2']);
 
-        for (let j = 0; j < Object.keys(resp["equipes "]).length; j++){
-          let equipe = Object.keys(resp["equipes "])[j];
-          if (time1 == parseInt(resp["equipes "][equipe].id)){
-            time1 = resp["equipes "][equipe];
+        for (let j = 0; j < Object.keys(resp["equipes"]).length; j++){
+          let equipe = Object.keys(resp["equipes"])[j];
+          if (time1 == parseInt(resp["equipes"][equipe].id)){
+            time1 = resp["equipes"][equipe];
           }
-          if (time2 == parseInt(resp["equipes "][equipe].id)){
-            time2 = resp["equipes "][equipe];
+          if (time2 == parseInt(resp["equipes"][equipe].id)){
+            time2 = resp["equipes"][equipe];
           }
         }
         
@@ -37,6 +40,7 @@ export class JogosDataComponent implements OnInit {
         resp.fases['2700'].jogos.id[id]['time2'] = time2;
         this.jogos.push(resp.fases['2700'].jogos.id[id]);
       }
+      this.loading = false;
     });
   }
 }

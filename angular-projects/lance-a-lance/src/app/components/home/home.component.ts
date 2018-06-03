@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   rodadas: boolean = false;
   equipes: boolean = false;
   classificacao: boolean = false;
+  profile: boolean = false;
   ngOnInit() {
   }
 
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
     this.rodadas = false;
     this.equipes = false;
     this.classificacao = false;
+    this.profile = false;
   }
 
   onClickRodadas(){
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
     this.jogosData = false;
     this.equipes = false;
     this.classificacao = false;
+    this.profile = false;
   }
 
   onClickEquipes(){
@@ -41,6 +44,7 @@ export class HomeComponent implements OnInit {
     this.jogosData = false;
     this.rodadas = false;
     this.classificacao = false;
+    this.profile = false;
   }
 
   onClickClassificacao() {
@@ -48,6 +52,14 @@ export class HomeComponent implements OnInit {
     this.jogosData = false;
     this.rodadas = false;
     this.equipes = false;
+    this.profile = false;
   }
 
+  onClickProfile() {
+    this.profile = true;
+    this.classificacao = false;
+    this.jogosData = false;
+    this.rodadas = false;
+    this.equipes = false;
+  }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
 
 
 @Component({
@@ -43,7 +42,7 @@ export class LoginComponent implements OnInit {
         user: data[0]
       }
     );
-    localStorage.setItem('user', data[0]);
+    localStorage.setItem('user', data[0].email);
   }
 
   login(){
